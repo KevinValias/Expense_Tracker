@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
+import React from "react";
 import ExpenseDate from "./ExpenseDate";
 import "./ExpenseItem.css";
 import Card from "../UI/Card";
 
 const ExpenseItem = (props) => {
-  const [title, setTitle] = useState(props.title);
+  // const [title, setTitle] = useState(props.title);
   // const expenseDate = new Date(2021, 9, 19);
   // const expenseTitle = "Car Insurance";
   // const expenseAmount = "300.00";
@@ -13,10 +14,10 @@ const ExpenseItem = (props) => {
   // const year = props.date.getFullYear();
   // *** Moved Date Into NEw Component ExpenseDate *** //
 
-  const clickHandler = () => {
-    setTitle("updated!!");
-    console.log(title);
-  };
+  // const clickHandler = () => {
+  //   setTitle("updated!!");
+  //   console.log(title);
+  // };
 
   return (
     <Card className="expense-item">
@@ -26,10 +27,10 @@ const ExpenseItem = (props) => {
            <div>{year}</div> */}
       <ExpenseDate date={props.date} />
       <div className="expense-item__description">
-        <h2>{title}</h2>
+        <h2>{props.title}</h2>
         <div className="expense-item__price">${props.amount}</div>
       </div>
-      <button onClick={clickHandler}>Change Title</button>
+      {/* <button onClick={clickHandler}>Change Title</button> */}
     </Card>
   );
 };
